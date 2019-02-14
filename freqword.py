@@ -15,14 +15,11 @@ def HammingDistance(pat1,pat2):
 def ApproximatePatternCount(text,pattern,d):
     count = 0
     patlen = len(pattern)
-    #print("count: "+str(count)+" patlen: "+str(patlen))
     for i in range(len(text)-patlen):
-        #print("i: "+str(i)+" range: "+str(len(range(len(text)-patlen)))
         newpat=text[i:patlen+i]
-        #print("newpat: "+newpat)
         if HammingDistance(pattern,newpat)<=d:
             count += 1
-            print("index: "+str(i))
+            #print("index: "+str(i)) # for printing the indexes of mismatch
     return count
     
     
