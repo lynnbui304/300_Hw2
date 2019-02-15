@@ -31,8 +31,8 @@ print(app)
 
 
 # Code for FrequentWordsWithMRC
-def FrequentWordsWithMRC():
-    pass
+def FrequentWordsWithMRC(text,k,d):
+    FreqPat={}
 
 
 
