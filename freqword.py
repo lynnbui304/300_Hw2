@@ -3,13 +3,6 @@
 # Written by: Steven Parker and Lynn Bui
 ######################
 
-def readFile(file_name):
-    data = ""
-    file = open(file_name, "r")
-    for line in file:
-       data = data + line
-    return data 
-
 # Hamming Distance function
 def HammingDistance(pat1,pat2):
     count=0
@@ -40,6 +33,8 @@ print(app)
 # Code for FrequentWordsWithMRC
 def FrequentWordsWithMRC(text,k,d):
     FreqPat={}
+    for i in range(len(text)-k):
+        pat=text[i:k+i]
 
 
 
