@@ -1,7 +1,8 @@
 # freqword.py
 # Sup Zack
 # Written by: Steven Parker and Lynn Bui
-######################
+# 
+#########################################
 
 # Hamming Distance function
 def HammingDistance(pat1,pat2):
