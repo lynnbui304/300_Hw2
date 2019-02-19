@@ -1,8 +1,19 @@
 # freqword.py
 # Sup Zack
 # Written by: Steven Parker and Lynn Bui
+<<<<<<< Updated upstream
 # 
 #########################################
+=======
+######################
+
+def readFile(file_name):
+    data = ""
+    file = open(file_name, "r")
+    for line in file:
+       data = data + line
+    return data
+>>>>>>> Stashed changes
 
 # Hamming Distance function
 def HammingDistance(pat1,pat2):
