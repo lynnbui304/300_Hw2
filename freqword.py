@@ -1,5 +1,5 @@
 # freqword.py
-# Sup Zack
+
 # Written by: Steven Parker and Lynn Bui
 <<<<<<< Updated upstream
 # 
