@@ -1,5 +1,5 @@
 # freqword.py
-
+# 
 # Written by: Steven Parker and Lynn Bui
 <<<<<<< Updated upstream
 # 
@@ -35,10 +35,10 @@ def ApproximatePatternCount(text,pattern,d):
     return count
     
     
-a="GATTACATTTATCACACACTTAAGGCTGTGAGCAT" #35
-b="GATTACA"
-app=ApproximatePatternCount(a,b,3)
-print(app)
+a="GATTACATTTATCACACACTTAAGGCTGTGAGCAT" # len 35 test string
+#="GATTACA" # test pattern
+#app=ApproximatePatternCount(a,b,3) test call
+#print(app) # test call
 
 
 
