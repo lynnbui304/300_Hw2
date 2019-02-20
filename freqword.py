@@ -11,7 +11,7 @@ def readFile(file_name):
     for line in file:
        data = data + line.strip("\n")
     return data
-#dat=readFile("README.md") # test call
+dat=readFile("test.txt") # test call
 #print(dat) # test print
 
 # Hamming Distance function
@@ -26,7 +26,7 @@ def HammingDistance(pat1,pat2):
 def ApproximatePatternCount(text,pattern,d):
     count = 0
     patlen = len(pattern)
-    for i in range(len(text)-patlen):
+    for i in range(len(text)-patlen+1):
         newpat=text[i:patlen+i]
         if HammingDistance(pattern,newpat)<=d:
             count += 1
@@ -34,7 +34,7 @@ def ApproximatePatternCount(text,pattern,d):
     return count
     
     
-a="GATTACATTTATCACACACTTAAGGCTGTGAGCAT" # len 35 test string
+#a="GATTACATTTATCACACACTTAAGGCTGTGAGCAT" # len 35 test string
 #="GATTACA" # test pattern
 #app=ApproximatePatternCount(a,b,3) # test call
 #print(app) # test call
@@ -53,17 +53,27 @@ def RevComp(pat):
             revC += 'G'
     return revC[::-1]
 
-print(RevComp('GATTACA'))
+#print(RevComp('GATTACA')) # RevComp test
 
 # Code for FrequentWordsWithMRC
 def FrequentWordsWithMRC(text,k,d):
     FreqPat={}
     count=[]
-    for i in range(len(text)-k):
+    for i in range(len(text)-k+1):
         pat=text[i:k+i]
         cnt1=ApproximatePatternCount(text,pat,d)
         cnt2=ApproximatePatternCount(text,RevComp(pat),d)
         count.append(cnt1+cnt2)
+    M=max(count)
+    for i in range(len(count)):
+        if count[i]==M:
+            if text[i:k+i] in FreqPat:
+                FreqPat[text[i:k+i]].append(i)
+            else:
+                FreqPat[text[i:k+i]]=[i]
+    return M,FreqPat
+print(FrequentWordsWithMRC(dat,3,1))
+
 
 
 
