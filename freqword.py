@@ -11,7 +11,7 @@ def readFile(file_name):
     for line in file:
        data = data + line.strip("\n")
     return data
-dat=readFile("test.txt") # test call
+dat=readFile("VibrioOriC.txt") # read file
 #print(dat) # test print
 
 # Hamming Distance function
