@@ -1,19 +1,18 @@
 # freqword.py
 # 
 # Written by: Steven Parker and Lynn Bui
-
+#
 # 
 #########################################
-=======
-######################
 
 def readFile(file_name):
     data = ""
     file = open(file_name, "r")
     for line in file:
-       data = data + line
+       data = data + line.strip("\n")
     return data
->>>>>>> Stashed changes
+#dat=readFile("README.md") # test call
+#print(dat) # test print
 
 # Hamming Distance function
 def HammingDistance(pat1,pat2):
@@ -37,17 +36,34 @@ def ApproximatePatternCount(text,pattern,d):
     
 a="GATTACATTTATCACACACTTAAGGCTGTGAGCAT" # len 35 test string
 #="GATTACA" # test pattern
-#app=ApproximatePatternCount(a,b,3) test call
+#app=ApproximatePatternCount(a,b,3) # test call
 #print(app) # test call
 
+# Code for reverse compliment
+def RevComp(pat):
+    revC=''
+    for i in pat:
+        if i == 'A':
+            revC += 'T'
+        if i == 'T':
+            revC += 'A'
+        if i == 'G':
+            revC += 'C'
+        if i == 'C':
+            revC += 'G'
+    return revC[::-1]
 
+print(RevComp('GATTACA'))
 
 # Code for FrequentWordsWithMRC
 def FrequentWordsWithMRC(text,k,d):
     FreqPat={}
+    count=[]
     for i in range(len(text)-k):
         pat=text[i:k+i]
-
+        cnt1=ApproximatePatternCount(text,pat,d)
+        cnt2=ApproximatePatternCount(text,RevComp(pat),d)
+        count.append(cnt1+cnt2)
 
 
 
