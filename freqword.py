@@ -13,6 +13,8 @@ def readFile(file_name):
     return data
 dat=readFile("VibrioOriC.txt") # read file
 #print(dat) # test print
+=======
+>>>>>>> Stashed changes
 
 # Hamming Distance function
 def HammingDistance(pat1,pat2):
