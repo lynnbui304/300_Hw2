@@ -9,7 +9,7 @@ def readFile(file_name):
     data = ""
     file = open(file_name, "r")
     for line in file:
-       data = data + line.strip("\n")
+       data = data + line.strip("\n").upper()
     return data
 dat=readFile("VibrioOriC.txt") # read file
 #print(dat) # test print
@@ -74,7 +74,7 @@ def FrequentWordsWithMRC(text,k,d):
             else:
                 FreqPat[text[i:k+i]]=[i]
     return M,FreqPat
-print(FrequentWordsWithMRC(dat,3,1))
+print(FrequentWordsWithMRC(dat,9,0))
 
 
 
