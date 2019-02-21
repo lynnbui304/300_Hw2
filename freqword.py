@@ -5,16 +5,15 @@
 # 
 #########################################
 
+
 def readFile(file_name):
     data = ""
     file = open(file_name, "r")
     for line in file:
        data = data + line.strip("\n").upper()
     return data
-dat=readFile("VibrioOriC.txt") # read file
-#print(dat) # test print
-=======
->>>>>>> Stashed changes
+dat = readFile("VibrioOriC.txt") #  read file
+# print(dat) # test print
 
 # Hamming Distance function
 def HammingDistance(pat1,pat2):
@@ -25,21 +24,21 @@ def HammingDistance(pat1,pat2):
     return count
 
 # Code for approximate pattern count
-def ApproximatePatternCount(text,pattern,d):
+def ApproximatePatternCount(text, pattern, d):
     count = 0
     patlen = len(pattern)
     for i in range(len(text)-patlen+1):
-        newpat=text[i:patlen+i]
-        if HammingDistance(pattern,newpat)<=d:
+        newpat = text[i:patlen+i]
+        if HammingDistance(pattern, newpat) <= d:
             count += 1
-            #print("index: "+str(i)) # for printing the indexes of mismatch
+            #  print("index: "+str(i)) # for printing the indexes of mismatch
     return count
     
     
-#a="GATTACATTTATCACACACTTAAGGCTGTGAGCAT" # len 35 test string
-#="GATTACA" # test pattern
-#app=ApproximatePatternCount(a,b,3) # test call
-#print(app) # test call
+#  a="GATTACATTTATCACACACTTAAGGCTGTGAGCAT" # len 35 test string
+#  "GATTACA" # test pattern
+#  app=ApproximatePatternCount(a,b,3) # test call
+#  print(app) # test call
 
 # Code for reverse compliment
 def RevComp(pat):
@@ -54,21 +53,20 @@ def RevComp(pat):
         if i == 'C':
             revC += 'G'
     return revC[::-1]
-
-#print(RevComp('GATTACA')) # RevComp test
+#  print(RevComp('GATTACA')) # RevComp test
 
 # Code for FrequentWordsWithMRC
 def FrequentWordsWithMRC(text,k,d):
     FreqPat={}
-    count=[]
+    count = []
     for i in range(len(text)-k+1):
-        pat=text[i:k+i]
-        cnt1=ApproximatePatternCount(text,pat,d)
-        cnt2=ApproximatePatternCount(text,RevComp(pat),d)
+        pat = text[i:k+i]
+        cnt1 = ApproximatePatternCount(text, pat, d)
+        cnt2 = ApproximatePatternCount(text, RevComp(pat), d)
         count.append(cnt1+cnt2)
-    M=max(count)
+    M = max(count)
     for i in range(len(count)):
-        if count[i]==M:
+        if count[i] == M:
             if text[i:k+i] in FreqPat:
                 FreqPat[text[i:k+i]].append(i)
             else:
