@@ -81,4 +81,4 @@ def FrequentWordsWithMRC(text,k,d):
     return FreqPat
 
 dat = readFile("VibrioOriC.txt") #  read file
-print(FrequentWordsWithMRC(dat,9,1))
+print(FrequentWordsWithMRC(dat,9,0))

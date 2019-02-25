@@ -16,7 +16,6 @@ def readFile(file_name):
 # print(dat) # test print 
  
 # Hamming Distance function 
-# Hamming Distance function 
 def HammingDistance(pat1,pat2,d): 
     count=0 
     for i in range(len(pat1)): # Check for differences in patterns 
