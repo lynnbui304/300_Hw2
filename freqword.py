@@ -54,13 +54,11 @@ def FrequentWordsWithMRC(text,k,d):
     FreqPat={} # set for final output
     count = [] # Array of score for each pattern starting at each index
     for i in range(len(text)-k+1):
-        print(i)
+        #print(i) # optional print current index to test for reasonable speed
         pat = text[i:k+i]
         rPat = RevComp(pat)
         if pat in dict:
             count.append(dict[pat])
-        elif rPat in dict:
-            count.append(dict[rPat])
         else:
             cnt1 = ApproximatePatternCount(text, pat, d)
             cnt2 = ApproximatePatternCount(text, rPat, d)
@@ -73,7 +71,7 @@ def FrequentWordsWithMRC(text,k,d):
                 FreqPat[text[i:k+i]].append(i)
             else:
                 FreqPat[text[i:k+i]]=[i]
-    return M,FreqPat
+    return [M,FreqPat]
 
-dat = readFile("EColi.fq") #  read file
+dat = readFile("VibrioOriC.txt") #  read file
 print(FrequentWordsWithMRC(dat,9,1))
