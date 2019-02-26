@@ -55,7 +55,6 @@ def FrequentWordsWithMRC(text,k,d):
     FreqPat={} # set for final output 
     count = [] # Array of score for each pattern starting at each index 
     for i in range(len(text)-k+1): 
-        # print(i) 
         pat = text[i:k+i] 
         rPat = RevComp(pat) 
         if pat in dict: 

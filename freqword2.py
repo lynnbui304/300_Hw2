@@ -57,14 +57,17 @@ def FrequentWordsWithMRC(text,k,d):
     count = [] # Array of score and match locations
     for i in range(len(text)-k+1):
         count.append([1,[i]])
-    for i in range(len(text)-k+1):
-        # print(i) # optional print current index to test for reasonable speed
+    for i in range(len(text)-k+1): 
         pat = text[i:k+i]
         rPat = RevComp(pat)
         if pat in dict:
             count[i]=dict[pat]
+            for j in dict[pat][1]:
+                if j>i:
+                    count[j][0]+=1
+                    count[j][1]+=[j]
         else:
-            cnt1 = ApproximatePatternCount(text[i+1:], pat, d, i+1)
+            cnt1 = ApproximatePatternCount(text[i+1:], pat, d, i)
             cnt2 = ApproximatePatternCount(text[i:], rPat, d, i)
             count[i][0]+=cnt1[0]+cnt2[0]
             count[i][1]+=cnt1[1]+cnt2[1]
