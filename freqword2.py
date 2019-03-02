@@ -58,6 +58,7 @@ def FrequentWordsWithMRC(text,k,d):
     for i in range(len(text)-k+1):
         count.append([1,[i]])
     for i in range(len(text)-k+1): 
+        print(i) # optional print to test for time.
         pat = text[i:k+i]
         rPat = RevComp(pat)
         if pat in dict:
@@ -67,7 +68,7 @@ def FrequentWordsWithMRC(text,k,d):
                     count[j][0]+=1
                     count[j][1]+=[j]
         else:
-            cnt1 = ApproximatePatternCount(text[i+1:], pat, d, i)
+            cnt1 = ApproximatePatternCount(text[i+1:], pat, d, i+1)
             cnt2 = ApproximatePatternCount(text[i:], rPat, d, i)
             count[i][0]+=cnt1[0]+cnt2[0]
             count[i][1]+=cnt1[1]+cnt2[1]
@@ -83,5 +84,5 @@ def FrequentWordsWithMRC(text,k,d):
                 FreqPat[i]=dict[i]
     return FreqPat
 
-dat = readFile("VibrioOriC.txt") #  read file
-print(FrequentWordsWithMRC(dat,9,0))
+dat = readFile("EColi10percent.fq") #  read file
+print(FrequentWordsWithMRC(dat,9,1))
