@@ -6,27 +6,25 @@ def readFile(file_name):
        data = data + line.strip("\n") 
     return data 
 
-# This fucntion prints the frequency dictionary	
+
+# This function prints the frequency dictionary
 def printFreqsDict(freqs_dict):
     for key, val in freqs_dict.items():
-	    print (key, "-->" , val)
-	
-def ComputingFrequencies(data, k):
-    
-    data_dict = {}
+    print(key,"-->", val)
 
+
+def ComputingFrequencies(data, k):
+    data_dict = {}
     data_len = len(data)
-	
-    for i in range(data_len - k):
+    for i in range(data_len - k+1):
         kmer_data = data[i:i+k]
         if kmer_data in data_dict:
             data_dict[kmer_data] = data_dict[kmer_data] + 1
         else:
-            data_dict[kmer_data] = 1            		
-		
+            data_dict[kmer_data] = 1
     return data_dict
 
-	
+
 pattern = "atgatcaag"
 k = 9	
 genome_data = readFile("VibrioOriC.txt")
