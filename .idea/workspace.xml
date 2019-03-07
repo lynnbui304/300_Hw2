@@ -19,10 +19,17 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/freqword2.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-396" />
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/freqword_back.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1301" />
           </provider>
         </entry>
       </file>
@@ -56,7 +63,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="1">
+  <component name="ProjectFrameBounds">
     <option name="x" value="6" />
     <option name="width" value="1890" />
     <option name="height" value="1091" />
@@ -235,7 +242,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="4" y="0" width="1260" height="727" extended-state="1" />
+    <frame x="4" y="0" width="1260" height="727" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18479149" />
@@ -355,6 +362,11 @@
     <entry file="file://$PROJECT_DIR$/freqword2.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-396" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/freqword_back.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1301" />
       </provider>
     </entry>
   </component>
