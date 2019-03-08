@@ -1,0 +1,22 @@
+Written by Lynn Bui and Steven Parker
+Input:
+dat = DNA pattern
+k = k-mer length searched for
+d = max hamming distance
+print(FrequentWordsWithMRC(dat,k,d))
+
+Output:
+[M, {'pattern_1': [array_1], 'pattern_2': [array_2], ..., 'pattern_N': [array_N] }]
+
+M = Largest score for any k-mer with a hamming distance up to d
+
+{'pattern': [array]} = a 'pattern' with a score of M and an [array] of each 
+position it was found in dat
+
+Potential DnaA boxes for Vibrio Cholerae with k-mers of 9, Hamming distance of 0 is:
+[6, {'ATGATCAAG': [27, 127, 508], 'CTTGATCAT': [397, 468, 525]}]
+=> The largest score for pattern 'ATGATCAAG' and its reverse complement 'CTTGATCAT' is 6. 
+=> The times that the pattern and its reverse complement appearing should be the same. In this case, it is 3 times. 
+Pattern 'ATGATCAAG' appeared at index 27, 127, and 508; its reverse complement 'CTTGATCAT' appeared at index 397, 468, and 525.  
+
+Potential DnaA boxes for E.Coli with k-mers of 9, Hamming distance of 1 is:
